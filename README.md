@@ -1,6 +1,6 @@
 # timer
 A simple countdown timer made with Flask and JavaScript.
-New edits by Dale
+New edits by Dal
 ## DEMO
 http://timertimer.herokuapp.com/
 
