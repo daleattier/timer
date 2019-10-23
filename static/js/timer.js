@@ -18,7 +18,8 @@ $(document).ready(function() {
                 clearInterval(refresh);  // exit refresh loop
                 var music = $("#over_music")[0];
                 music.play();
-                alert("Time's Up!");
+                //alert("Time's Up!");
+                //music.play();
             }
         }, 1000);
 
