@@ -13,12 +13,14 @@
 <div>
     <form method="POST" action="{{ url_for('custom') }}" style="display:inline">
         <input name="time" class="time-input" placeholder="e.g. 12/30s/20m/2h">
-        <input type="submit" class="startButton" value="START">
+        <input type="submit" class="startButton" value="START" >
+        <input type="button" class="startButton" value="PAUSE" onclick="getElementById('ispaused').click();">
+        <input id="ispaused" type="checkbox" hidden>
     </form>
     &nbsp;&nbsp;
-    <a class="workButton" href="{{ url_for('minutes', num=25) }}">25 Minutes</a>
-    <a class="restButton" href="{{ url_for('minutes', num=5) }}">5 Minutes</a>
-    <a class="helpButton" id="help-btn">?</a>
+    <a class="workButton" href="{{ url_for('minutes', num=21) }}">21 Minutes</a>
+    <a class="restButton" href="{{ url_for('minutes', num=14) }}">14 Minutes</a>
+   
 
     {% for message in get_flashed_messages() %}
     <div class="alert-info">
@@ -49,7 +51,7 @@
 </div>
 
 <div class="footer">
-    This is the footer
+    &nbsp;&nbsp;
 </div>
 {% endblock %}
 

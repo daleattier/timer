@@ -11,16 +11,26 @@ $(document).ready(function() {
 
             var output = minutes + " : " + seconds;
             display.text(output);
-            $("title").html(output + " - TimerTimer");
-
-            if (--timer < 0) {
-                display.text("Time's Up!");
-                clearInterval(refresh);  // exit refresh loop
+            if(minutes == 03 & seconds == 00){
+                display.text("3 min warning");
                 var music = $("#over_music")[0];
                 music.play();
-                //alert("Time's Up!");
-                //music.play();
             }
+            $("title").html(output + " - TimerTimer");
+            if( document.getElementById('ispaused').checked == false){
+                if (--timer < 0) {
+                    display.text("Time's Up!");
+                    //clearInterval(refresh);  // exit refresh loop
+                    if (timer == -1){
+                        var music = $("#over_music")[0];
+                        music.play();
+                    }
+                    if (timer < -60) {
+                        clearInterval(refresh);  // exit refresh loop
+                        startTimer(duration, display);
+                    }
+                }
+            } 
         }, 1000);
 
     }
