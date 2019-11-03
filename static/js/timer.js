@@ -27,6 +27,8 @@ $(document).ready(function() {
                     }
                     if (timer < -60) {
                         clearInterval(refresh);  // exit refresh loop
+                        var music = $("#over_music")[0];
+                        music.play();
                         startTimer(duration, display);
                     }
                 }
